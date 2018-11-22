@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sree.outlaymanagement.PayElectricityActivity"
+    android:orientation="vertical"
+    android:layout_marginTop="200px"
+    android:layout_marginLeft="40px"
+    android:layout_marginRight="40px"
+    android:layout_marginBottom="100px">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="91dp"
+                android:layout_height="37dp"
+                android:text="Bill No" />
+
+            <TextView
+                android:id="@+id/txtbillno"
+                android:layout_width="304dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="91dp"
+                android:layout_height="37dp"
+                android:text="Name" />
+            <TextView
+                android:id="@+id/txtname"
+                android:layout_width="304dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="91dp"
+                android:layout_height="37dp"
+                android:text="Due Date" />
+
+            <TextView
+                android:id="@+id/txtdate"
+                android:layout_width="304dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="91dp"
+                android:layout_height="37dp"
+                android:text="Amount" />
+
+            <TextView
+                android:id="@+id/txtamt"
+                android:layout_width="304dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="91dp"
+                android:layout_height="37dp"
+                android:text="Status" />
+
+            <TextView
+                android:id="@+id/txtstatus"
+                android:layout_width="304dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/txtpay"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="50px"
+            android:layout_marginTop="60px"
+            android:text="Pay Using"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30px"
+            android:layout_marginLeft="80px">
+
+            <Button
+                android:id="@+id/btndebit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="160px"
+                android:text="DEBIT CARD" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+
+</ScrollView>

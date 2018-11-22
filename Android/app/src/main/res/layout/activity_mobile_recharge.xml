@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sree.outlaymanagement.MobileRechargeActivity"
+    android:orientation="vertical"
+    android:layout_marginTop="200px"
+    android:layout_marginLeft="40px"
+    android:layout_marginRight="40px"
+    android:layout_marginBottom="100px">
+
+    <Spinner
+        android:id="@+id/spprovider"
+        android:layout_width="302dp"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:id="@+id/edtphn"
+        android:layout_width="304dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Enter Phone Number"/>
+
+    <EditText
+        android:id="@+id/edtamount"
+        android:layout_width="304dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Enter Amount"/>
+
+    <TextView
+        android:layout_width="156dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="60px"
+        android:layout_marginLeft="50px"
+        android:text="Pay Using"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="60px">
+
+        <Button
+            android:id="@+id/btndebit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="160px"
+            android:text="DEBIT CARD" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+

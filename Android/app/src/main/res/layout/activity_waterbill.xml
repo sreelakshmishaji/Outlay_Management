@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sree.outlaymanagement.ElectricitybillActivity"
+    android:orientation="vertical"
+    android:layout_marginTop="250px">
+
+    <EditText
+        android:id="@+id/edtserviceno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80px"
+        android:layout_marginRight="80px"
+        android:ems="10"
+        android:hint="Service Number"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:layout_width="304dp"
+        android:layout_height="81dp"
+        android:layout_marginLeft="80px"
+        android:layout_marginRight="80px"
+        android:text="Please enter a valid Service Number having length minimum 9 and maximum 13 digit long(Eg:1236547891) " />
+
+    <Button
+        android:id="@+id/btnconform"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80px"
+        android:layout_marginRight="80px"
+        android:text="Confirm" />
+</LinearLayout>
