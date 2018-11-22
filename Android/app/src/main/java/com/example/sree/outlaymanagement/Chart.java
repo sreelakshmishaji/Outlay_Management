@@ -19,6 +19,7 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
@@ -42,6 +43,7 @@ public class Chart extends DemoBase implements SeekBar.OnSeekBarChangeListener
 
     public boolean mDrawRoundedSlices = false;
              float  val[]={25,35,40};
+             float val1[]={25,53,40};
 
     private PieChart chart;
     private SeekBar seekBarX, seekBarY;
@@ -55,12 +57,25 @@ public class Chart extends DemoBase implements SeekBar.OnSeekBarChangeListener
         setContentView(R.layout.activity_chart);
 
         setTitle("PieChartActivity");
-String jjjj=getIntent().getStringExtra("inc");
+String str_inc=getIntent().getStringExtra("inc");
 
-        val[0]=  Float.parseFloat("7");
-        val[1]=  Float.parseFloat(getIntent().getStringExtra("exp"));
-        val[2]=  Float.parseFloat(getIntent().getStringExtra("svngs"));
+        val1[0]=  Float.parseFloat(getIntent().getStringExtra("inc"));
+        val1[1]=  Float.parseFloat(getIntent().getStringExtra("exp"));
+        val1[2]=  Float.parseFloat(getIntent().getStringExtra("svngs"));
+        Float total=(val1[0]+val1[1]+val1[2]);
+      //  Toast.makeText(Chart.this,total+"",Toast.LENGTH_LONG).show();
+//        Toast.makeText(Chart.this,val1[0]+"",Toast.LENGTH_LONG).show();
+//        Toast.makeText(Chart.this,val1[1]+"",Toast.LENGTH_LONG).show();
+//        Toast.makeText(Chart.this,val1[2]+"",Toast.LENGTH_LONG).show();
+        val[0]=(val1[0]/(total))*100;
+        val[1]=(val1[1]/(total))*100;
+        val[2]=(val1[2]/(total))*100;
+        Toast.makeText(Chart.this,val1[2]+"",Toast.LENGTH_LONG).show();
+        for(int i=0;i<3;i++){
 
+          //  Toast.makeText(Chart.this,val1[i]+"",Toast.LENGTH_LONG).show();
+
+}
 
         tvX = findViewById(R.id.tvXMax);
         tvY = findViewById(R.id.tvYMax);
@@ -131,7 +146,7 @@ String jjjj=getIntent().getStringExtra("inc");
         // the chart.
 
         for (int i = 0; i < count ; i++) {
-            entries.add(new PieEntry((float) (val[i]),
+            entries.add(new PieEntry((float) (val1[i]),
                     parties[i % parties.length],
                     getResources().getDrawable(R.drawable.star)));
         }
@@ -193,7 +208,7 @@ String jjjj=getIntent().getStringExtra("inc");
 
     private SpannableString generateCenterSpannableText() {
 
-        SpannableString s = new SpannableString("Know your money where to go\nInstead of woundering where it went");
+        SpannableString s = new SpannableString("Know your money \n Outlay Manager");
         s.setSpan(new RelativeSizeSpan(1.7f), 0, 14, 0);
         s.setSpan(new StyleSpan(Typeface.NORMAL), 14, s.length() - 15, 0);
         s.setSpan(new ForegroundColorSpan(Color.GRAY), 14, s.length() - 15, 0);

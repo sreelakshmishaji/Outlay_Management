@@ -44,7 +44,8 @@
         <activity android:name=".BudgetLineActivity" />
         <activity android:name=".ExpenseActivity" />
         <activity android:name=".ChangePasswordActivity" />
-        <activity android:name=".Chart"/>
+        <activity android:name=".Chart" />
+
         <receiver
             android:name=".SMSReceiver"
             android:enabled="true"
@@ -60,10 +61,15 @@
         <activity android:name=".GraphActivity" />
         <activity android:name=".GenerateChartActivity" />
         <activity android:name=".WaterbillActivity" />
-        <!--<activity android:name=".DemoActivity" />-->
+        <!-- <activity android:name=".DemoActivity" /> -->
         <activity android:name=".PayWaterActivity" />
         <activity android:name=".LoanActivity" />
-        <activity android:name=".InsuranceActivity"></activity>
+        <activity android:name=".InsuranceActivity" />
+        <activity android:name=".ExpensebarchartActivity" />
+        <activity android:name=".EBarActivity" />
+        <activity android:name=".IncomebarchartActivity" />
+        <activity android:name=".BarChartActivity"/>
+        <activity android:name=".IBarActivity"></activity>
     </application>
 
 </manifest>

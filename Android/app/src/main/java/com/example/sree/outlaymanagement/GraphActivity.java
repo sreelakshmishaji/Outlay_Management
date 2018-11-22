@@ -64,10 +64,26 @@ String incometypename[]={"Select","Pie Chart","Expense Bar Chart","Income Bar Ch
                     GraphActivity.this, GraphActivity.this, Year, month, day);
             datePickerDialog1.show();
         }
-        else if(view== generate){
-            Intent i = new Intent(this,Chart.class);
-            startActivity(i);
+        else if(view== generate) {
+            if(type.getSelectedItem().equals("Pie Chart")){
 
+                Intent i = new Intent(this, GenerateChartActivity.class);
+            i.putExtra("startDate", from.getText().toString());
+            i.putExtra("endDate", to.getText().toString());
+
+            i.putExtra("type", type.getSelectedItem().toString());
+
+
+            startActivity(i);
+            }
+        if(type.getSelectedItem().equals("Expense Bar Chart")){
+            Intent i = new Intent(this,ExpensebarchartActivity.class);
+            i.putExtra("startDate",from.getText().toString());
+            i.putExtra("endDate",to.getText().toString());
+
+            i.putExtra("type",type.getSelectedItem().toString());
+startActivity(i);
+        }
         }
 
     }

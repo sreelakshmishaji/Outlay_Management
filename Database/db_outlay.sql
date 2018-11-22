@@ -7,7 +7,7 @@
 # Server OS:                    Win32
 # Target compatibility:         ANSI SQL
 # HeidiSQL version:             4.0
-# Date/time:                    2018-11-19 22:35:55
+# Date/time:                    2018-11-21 16:15:32
 # --------------------------------------------------------
 
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ANSI,NO_BACKSLASH_ESCAPES';*/
@@ -93,7 +93,7 @@ CREATE TABLE /*!32312 IF NOT EXISTS*/ "tbl_budget" (
   "budget_amt" int(11) NOT NULL,
   "person_id" int(11) NOT NULL,
   PRIMARY KEY  ("budget_id")
-) AUTO_INCREMENT=26;
+) AUTO_INCREMENT=32;
 
 
 
@@ -151,6 +151,18 @@ REPLACE INTO "tbl_budget" ("budget_id", "budget_amt", "person_id") VALUES
 	(24,753,17);
 REPLACE INTO "tbl_budget" ("budget_id", "budget_amt", "person_id") VALUES
 	(25,9407,16);
+REPLACE INTO "tbl_budget" ("budget_id", "budget_amt", "person_id") VALUES
+	(26,18653,17);
+REPLACE INTO "tbl_budget" ("budget_id", "budget_amt", "person_id") VALUES
+	(27,34062,17);
+REPLACE INTO "tbl_budget" ("budget_id", "budget_amt", "person_id") VALUES
+	(28,0,17);
+REPLACE INTO "tbl_budget" ("budget_id", "budget_amt", "person_id") VALUES
+	(29,19580,17);
+REPLACE INTO "tbl_budget" ("budget_id", "budget_amt", "person_id") VALUES
+	(30,20217,17);
+REPLACE INTO "tbl_budget" ("budget_id", "budget_amt", "person_id") VALUES
+	(31,33301,48);
 /*!40000 ALTER TABLE "tbl_budget" ENABLE KEYS;*/
 UNLOCK TABLES;
 
@@ -299,7 +311,7 @@ CREATE TABLE /*!32312 IF NOT EXISTS*/ "tbl_expenses" (
   "person_id" int(11) NOT NULL,
   "extype_id" int(11) NOT NULL,
   PRIMARY KEY  ("expense_id")
-) AUTO_INCREMENT=66;
+) AUTO_INCREMENT=67;
 
 
 
@@ -411,6 +423,8 @@ REPLACE INTO "tbl_expenses" ("expense_id", "expense_date", "expense_amt", "perso
 	(64,'2018-11-19','250',16,28);
 REPLACE INTO "tbl_expenses" ("expense_id", "expense_date", "expense_amt", "person_id", "extype_id") VALUES
 	(65,'2018-11-17','850',16,29);
+REPLACE INTO "tbl_expenses" ("expense_id", "expense_date", "expense_amt", "person_id", "extype_id") VALUES
+	(66,'2018-11-20','1000',17,2);
 /*!40000 ALTER TABLE "tbl_expenses" ENABLE KEYS;*/
 UNLOCK TABLES;
 
@@ -472,7 +486,7 @@ REPLACE INTO "tbl_extype" ("extype_id", "extype_name") VALUES
 REPLACE INTO "tbl_extype" ("extype_id", "extype_name") VALUES
 	(28,'silvina collections');
 REPLACE INTO "tbl_extype" ("extype_id", "extype_name") VALUES
-	(29,'City:Temple - Mangalathuthazham Rd, Koothattukulam, Kerala 686662, IndiaKoothattukulam');
+	(29,'library');
 /*!40000 ALTER TABLE "tbl_extype" ENABLE KEYS;*/
 UNLOCK TABLES;
 
@@ -712,7 +726,7 @@ CREATE TABLE /*!32312 IF NOT EXISTS*/ "tbl_notify" (
   "person_id" int(11) NOT NULL,
   "notify_date" varchar(50) NOT NULL,
   PRIMARY KEY  ("notify_id")
-) AUTO_INCREMENT=63;
+) AUTO_INCREMENT=85;
 
 
 
@@ -846,6 +860,50 @@ REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date
 	(61,'You have crossed your budject line.Be carefull.For more details check review.',16,'2018-11-19');
 REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
 	(62,'You have crossed your budject line.Be carefull.For more details check review.',16,'2018-11-19');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(63,'You have crossed your budject line.Be carefull.For more details check review.',16,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(64,'You have crossed your budject line.Be carefull.For more details check review.',16,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(65,'You have crossed your budject line.Be carefull.For more details check review.',16,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(66,'You have crossed your budject line.Be carefull.For more details check review.',16,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(67,'You have crossed your budject line.Be carefull.For more details check review.',16,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(68,'You have crossed your budject line.Be carefull.For more details check review.',16,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(69,'You have crossed your budject line.Be carefull.For more details check review.',17,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(70,'You have crossed your budject line.Be carefull.For more details check review.',17,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(71,'You have crossed your budject line.Be carefull.For more details check review.',16,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(72,'You have crossed your budject line.Be carefull.For more details check review.',16,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(73,'You have crossed your budject line.Be carefull.For more details check review.',16,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(74,'You have crossed your budject line.Be carefull.For more details check review.',16,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(75,'You have crossed your budject line.Be carefull.For more details check review.',17,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(76,'You have crossed your budject line.Be carefull.For more details check review.',17,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(77,'You have crossed your budject line.Be carefull.For more details check review.',17,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(78,'You have crossed your budject line.Be carefull.For more details check review.',17,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(79,'You have crossed your budject line.Be carefull.For more details check review.',17,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(80,'You have crossed your budject line.Be carefull.For more details check review.',17,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(81,'You have crossed your budject line.Be carefull.For more details check review.',48,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(82,'You have crossed your budject line.Be carefull.For more details check review.',48,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(83,'You have crossed your budject line.Be carefull.For more details check review.',58,'2018-11-20');
+REPLACE INTO "tbl_notify" ("notify_id", "notify_name", "person_id", "notify_date") VALUES
+	(84,'You have crossed your budject line.Be carefull.For more details check review.',58,'2018-11-20');
 /*!40000 ALTER TABLE "tbl_notify" ENABLE KEYS;*/
 UNLOCK TABLES;
 
@@ -865,7 +923,7 @@ CREATE TABLE /*!32312 IF NOT EXISTS*/ "tbl_person" (
   "person_pswd" varchar(11) NOT NULL,
   "sync_id" int(11) NOT NULL default '0',
   PRIMARY KEY  ("person_id")
-) AUTO_INCREMENT=58;
+) AUTO_INCREMENT=59;
 
 
 
@@ -899,6 +957,8 @@ REPLACE INTO "tbl_person" ("person_id", "person_name", "person_gender", "person_
 	(55,'hima','Female','hima@gmail.com','9475817807','hinahoude','hina','hina',0);
 REPLACE INTO "tbl_person" ("person_id", "person_name", "person_gender", "person_email", "person_phn", "person_hname", "person_username", "person_pswd", "sync_id") VALUES
 	(57,'ann paul','Female','ann@gmail.com','9874563255','ann housr','ann','ann1',0);
+REPLACE INTO "tbl_person" ("person_id", "person_name", "person_gender", "person_email", "person_phn", "person_hname", "person_username", "person_pswd", "sync_id") VALUES
+	(58,'Eeeeee','Male','e@gmail.com','9870852144','Sdfgf','1e','ee',0);
 /*!40000 ALTER TABLE "tbl_person" ENABLE KEYS;*/
 UNLOCK TABLES;
 

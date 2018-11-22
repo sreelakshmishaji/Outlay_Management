@@ -677,7 +677,7 @@ public class WebServiceOutlay {
         
          String sel = "select sum(expense_amt) as sum from tbl_expenses where person_id='" + Personid + "' and  expense_date between '"+Fromdate+"' and '"+Todate+"' ";
             ResultSet rs = con.select(sel);
-            System.out.println(sel);
+            System.out.println("Graph:\t"+sel);
             if (rs.next()) {
                 expense = rs.getString("sum");
                 if (expense == null) {
@@ -687,7 +687,7 @@ public class WebServiceOutlay {
         
             String sel2 = "select sum(income_amt) as sum from tbl_income where person_id='" + Personid + "' and  income_date between '"+Fromdate+"' and '"+Todate+"' ";
             ResultSet rss = con.select(sel2);
-            System.out.println(sel2);
+            System.out.println("Graph:\t"+sel2);
             if (rss.next()) {
                 income = rss.getString("sum");
                 if (income == null) {
@@ -695,7 +695,7 @@ public class WebServiceOutlay {
                 }
             }
         bal = Integer.parseInt(income) - Integer.parseInt(expense);
-            System.out.println(bal + "balance");
+            System.out.println(bal + ":balance");
             jos = new JSONObject();
             jos.put("income", income);
             jos.put("expense", expense);
@@ -705,6 +705,7 @@ public class WebServiceOutlay {
         } catch (Exception ex) {
             System.out.println(ex);
         }
+       System.out.println(ji);
         return ji.toString();
             
             
@@ -914,6 +915,71 @@ System.out.println(insurance);
         return ji.toString();
             
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "expensebarchart")
+    public String expensebarchart(@WebParam(name = "Personid") String Personid, @WebParam(name = "Fromdate") String Fromdate, @WebParam(name = "Todate") String Todate) {
+         JSONArray ja = new JSONArray();
+        try {
+        //TODO write your implementation code here:
+            String etype="select * from tbl_extype";
+            ResultSet rr=con.select(etype);
+            while(rr.next()){
+             JSONObject jo = new JSONObject();
+                int examt=0;
+        String ebr = "select * from tbl_expenses ex inner join tbl_extype et on et.extype_id=ex.extype_id where person_id='" + Personid + "' and  expense_date between '"+Fromdate+"' and '"+Todate+"' and et.extype_id='"+rr.getString("extype_id")+"'";
+            ResultSet r32 = con.select(ebr);
+            System.out.println(ebr);
+           while (r32.next()) {
+                examt=examt+Integer.parseInt(r32.getString("expense_amt"));
+               
+                //String n2 = r32.getString("expense_amt");
+           } if(examt!=0){
+                String n1 = rr.getString("extype_name");
+                jo.put("Name", n1);
+                jo.put("Amount", examt);
+                
+                ja.put(jo);
+           } 
+            }
+        
+    }catch (Exception ex) {
+            Logger.getLogger(WebServiceOutlay.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println(ja);
+        return ja.toString();
     
     
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "incomebarchart")
+    public String incomebarchart(@WebParam(name = "Personid") String Personid, @WebParam(name = "Fromdate") String Fromdate, @WebParam(name = "Todate") String Todate) {
+        JSONArray ja = new JSONArray();
+        try {
+//TODO write your implementation code here:
+             String ibr = "select * from tbl_income inc inner join tbl_intype it on it.intype_id=inc.intype_id where person_id='" + Personid + "' and  income_date between '"+Fromdate+"' and '"+Todate+"' ";
+        ResultSet r42 = con.select(ibr);
+            System.out.println(ibr);
+            if (r42.next()) {
+
+                JSONObject jo = new JSONObject();
+
+                String n1 = r42.getString("intype_name");
+                String n2 = r42.getString("income_amt");
+                jo.put("Name", n1);
+                jo.put("Amount", n2);
+                ja.put(jo);
+
+            }
+            }catch (Exception ex) {
+            Logger.getLogger(WebServiceOutlay.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return ja.toString();
+    }
 }
+
