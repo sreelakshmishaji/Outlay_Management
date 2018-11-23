@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.sree.outlaymanagement.RegistrationActivity"
     android:orientation="vertical"
-    android:background="@drawable/images13">
+    android:background="@drawable/regis">
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -16,6 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="REGISTRATION"
+        android:textColor="@color/colorAccent"
         android:textSize="25dp"
         android:textStyle="bold"
         android:layout_gravity="center"/>
@@ -175,12 +176,16 @@
             android:id="@+id/btnreg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:textStyle="bold"
             android:text="Register" />
 
         <Button
             android:id="@+id/btncnl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:textStyle="bold"
             android:text="Cancel" />
 
     </LinearLayout>

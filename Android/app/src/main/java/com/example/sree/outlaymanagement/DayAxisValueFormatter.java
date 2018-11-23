@@ -1,7 +1,11 @@
 package com.example.sree.outlaymanagement;
 
+import android.util.Log;
+
 import com.github.mikephil.charting.charts.BarLineChartBase;
 import  com.example.sree.outlaymanagement.formatter.*;
+
+import java.util.Arrays;
 
 /**
  * Created by philipp on 02/06/16.
@@ -16,7 +20,10 @@ public class DayAxisValueFormatter extends ValueFormatter
     public DayAxisValueFormatter(BarLineChartBase<?> chart, String[] etype) {
         this.chart = chart;
         this.mMonths=etype;
-
+        for(int i=0;i<etype.length;i++){
+            Log.d("alliswell_etype",etype[i]);
+            Log.d("alliswell_etypepos",i+"");
+        }
 
     }
 
@@ -24,13 +31,16 @@ public class DayAxisValueFormatter extends ValueFormatter
     public String getFormattedValue(float value) {
 
         int days = (int) value;
+        Log.d("alliswell_days",days+"");
 
         int year = determineYear(days);
 
         int month = determineMonth(days);
-        String monthName = mMonths[month % mMonths.length];
+        String monthName = mMonths[days];
         String yearName = String.valueOf(year);
-
+        Log.d("alliswell_month",month+"");
+        Log.d("alliswell_monthName",monthName+"");
+        Log.d("alliswell_year",yearName+"");
         if (chart.getVisibleXRange() > 30 * 6) {
 
             return monthName + " " + yearName;
@@ -38,8 +48,9 @@ public class DayAxisValueFormatter extends ValueFormatter
 
             int dayOfMonth = determineDayOfMonth(days, month + 12 * (year - 2016));
 
-            String appendix = "";
-
+            String appendix = ""+ mMonths;
+            Log.d("alliswell_dayof",dayOfMonth+"");
+            Log.d("alliswell_appendix",appendix+"");
             switch (dayOfMonth) {
                 case 1:
                     appendix = "";
@@ -50,6 +61,30 @@ public class DayAxisValueFormatter extends ValueFormatter
                 case 3:
                     appendix = "";
                     break;
+//                case 4:
+//                    appendix = "";
+//                    break;
+//                case 5:
+//                    appendix = "";
+//                    break;
+//                case 6:
+//                    appendix = "";
+//                    break;
+//                case 7:
+//                    appendix = "";
+//                    break;
+//                case 8:
+//                    appendix = "";
+//                    break;
+//                case 9:
+//                    appendix = "";
+//                    break;
+//                case 10:
+//                    appendix = "";
+//                    break;
+//                case :
+//                    appendix = "";
+//                    break;
                 case 21:
                     appendix = "";
                     break;
@@ -64,7 +99,7 @@ public class DayAxisValueFormatter extends ValueFormatter
                     break;
             }
 
-            return dayOfMonth == 0 ? "" : dayOfMonth + appendix + " " + monthName;
+            return dayOfMonth == 0 ? "" : dayOfMonth + " " + monthName;
         }
     }
 

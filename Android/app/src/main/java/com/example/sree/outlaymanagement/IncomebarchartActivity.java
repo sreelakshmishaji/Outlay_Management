@@ -1,9 +1,12 @@
 package com.example.sree.outlaymanagement;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -44,6 +47,7 @@ public class IncomebarchartActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             try {
+                Log.d("allincome",s);
                 JSONArray j = new JSONArray(s);
                 name = new String[j.length()];
                 amount = new String[j.length()];
@@ -52,6 +56,10 @@ public class IncomebarchartActivity extends AppCompatActivity {
                     name[i] = jo.getString("Name");
                     amount[i] = jo.getString("Amount");
                 }
+                Intent i = new Intent(IncomebarchartActivity.this,IBarActivity.class);
+                i.putExtra("myJSON",j.toString() );
+                Toast.makeText(IncomebarchartActivity.this,"intent",Toast.LENGTH_SHORT).show();
+                startActivity(i);
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -37,8 +37,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         loan.setOnClickListener(this);
         report=findViewById(R.id.reportbtn);
         report.setOnClickListener(this);
-        wtrbill=findViewById(R.id.watrbtn);
-        wtrbill.setOnClickListener(this);
         insurance=findViewById(R.id.insurancebtn);
         insurance.setOnClickListener(this);
     }
@@ -88,10 +86,7 @@ else if (view==income) {
             Intent rpt=new Intent(this,GraphActivity.class);
             startActivity(rpt);
         }
-        else if(view==wtrbill){
-            Intent wtr=new Intent(this,WaterbillActivity.class);
-            startActivity(wtr);
-        }
+
 
         else if(view==loan){
             Intent ln=new Intent(this,LoanActivity.class);

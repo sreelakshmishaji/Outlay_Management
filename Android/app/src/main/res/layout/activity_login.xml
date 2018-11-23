@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.sree.outlaymanagement.MobileRechargeActivity$LoginActivity"
-    android:background="@drawable/images"
+    android:background="@drawable/image2"
     android:orientation="vertical">
     <EditText
         android:layout_marginTop="200px"
@@ -38,6 +38,8 @@
             android:id="@+id/btnlogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:textStyle="bold"
             android:text="Login" />
 
         <Button
@@ -45,6 +47,8 @@
             android:id="@+id/btncancel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:textStyle="bold"
             android:text="Cancel" />
 
     </LinearLayout>
@@ -55,6 +59,9 @@
         android:id="@+id/newusr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:textStyle="bold"
+        android:textSize="20dp"
         android:text="New User?" />
 
 

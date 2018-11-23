@@ -965,7 +965,7 @@ System.out.println(insurance);
              String ibr = "select * from tbl_income inc inner join tbl_intype it on it.intype_id=inc.intype_id where person_id='" + Personid + "' and  income_date between '"+Fromdate+"' and '"+Todate+"' ";
         ResultSet r42 = con.select(ibr);
             System.out.println(ibr);
-            if (r42.next()) {
+             while(r42.next()) {
 
                 JSONObject jo = new JSONObject();
 

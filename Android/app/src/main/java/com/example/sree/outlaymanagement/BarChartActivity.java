@@ -80,6 +80,9 @@ String s = getIntent().getStringExtra("myJSON");
 
             etype[i] = jo.getString("Name");
             myvalues[i] = Float.parseFloat(jo.getString("Amount"));
+
+
+            Log.d("alliswellArray",etype[i]+":"+myvalues[i]);
         }
         } catch (JSONException e) {
             e.printStackTrace();

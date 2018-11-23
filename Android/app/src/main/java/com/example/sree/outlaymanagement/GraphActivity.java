@@ -84,6 +84,15 @@ String incometypename[]={"Select","Pie Chart","Expense Bar Chart","Income Bar Ch
             i.putExtra("type",type.getSelectedItem().toString());
 startActivity(i);
         }
+            if(type.getSelectedItem().equals("Income Bar Chart")){
+                Intent i= new Intent(this,IncomebarchartActivity.class);
+                i.putExtra("startDate",from.getText().toString());
+                i.putExtra("endDate",to.getText().toString());
+
+                i.putExtra("type",type.getSelectedItem().toString());
+                startActivity(i);
+            }
+
         }
 
     }
